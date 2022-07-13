@@ -11,7 +11,7 @@ function replacePath(pagePath) {
 
 function getNodeTitle({ childMdx }) {
     const frontmatter = (childMdx || {}).frontmatter || {}
-    return (frontmatter.title || '').replace("'", '’')
+    return (frontmatter.title || '').replace(/'/g, '’')
 }
 
 function findNode(pages, slug) {
